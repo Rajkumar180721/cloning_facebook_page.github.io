@@ -3,7 +3,7 @@ var button = document.querySelector('button');
 
 
 function next(){
-	window.location.href="/home/raj/Documents/html/facebook clone/birthdate.html";	
+	window.location.href="https://github.com/Rajkumar180721/cloning_facebook_page.github.io./birthdate.html";	
 }
 
 function error(event,width) {
