@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join facebook</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div><header class="container fontSize"><strong>Join Facebook</strong></header></div>
+	<div id="buffer"></div>
+	<div class="center fontSize">
+		<h1>What's your date of birth?</h1>
+		<p>Choose your date of birth. You can always make this private later.</p>
+		<div class="block">
+			<p>Birthday</p>
+			<div id="warning" class=""></div>
+			<input id="date" type="date" name="birthDay" style="width: 200px;">
+		</div>
+		<button id="btn" class="border">Next</button>
+	</div>
+	<div><hr></div>
+		<p><a href="">Already have an account?</a></p>
+	<div class="container column height">
+			<p><a href="">language1</a></p>
+			<p><a href="">language2</a></p>
+			<p><a href="">language3</a></p>
+			<p><a href="">language4</a></p>
+			<p><a href="">language5</a></p>
+			<p><a href="">language6</a></p>
+			<p><a  href="">language7</a></p>
+			<p><a class="border" href="">+</a></p>
+	</div>
+	<footer class="center">Facebook Inc.</footer>
+	<script type="text/javascript">
+		var button = document.querySelector('button');
+		function check() {
+			var inputDate = new Date(document.getElementById('date').value);
+			let dateObj = new Date();
+			let currentDate = new Date(dateObj.getDate(),dateObj.getMonth(),dateObj.getFullYear());
+			if(inputDate.toString() === "Invalid Date" )
+			{
+				clearBox('warning');
+				error(event,210);
+			} 
+			else if(inputDate.toString() !== "Invalid Date" ) {
+				window.location.href = "/home/raj/Documents/html/facebook clone/inputmail.html";
+			}
+		}
+
+		function error(event,width) {
+			let warningPopup = document.getElementById('warning');
+			let text = document.createTextNode('Invalid date')
+			warningPopup.appendChild(text);
+			warningPopup.classList.add("warningPopup");
+			warningPopup.style.width = width+"px";
+		}
+
+		function clearBox(elementID) { 
+			var div = document.getElementById(elementID); 
+		      
+		    while(div.firstChild) { 
+		        div.removeChild(div.firstChild); 
+		    } 
+		}
+		button.addEventListener('click', function() {
+			check();
+		})
+	</script>
+</body>
+</html>

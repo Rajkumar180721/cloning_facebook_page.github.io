@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Join facebook</title>
+	<link rel="stylesheet" type="text/css" href="index.css">
+</head>
+<body>
+	<div><header class="container fontSize"><strong>Join Facebook</strong></header></div>
+	<div id="buffer"></div>
+	<div class="center fontSize">
+		<h1>Enter your email</h1>
+		<p>Enter the email at which you can contacted. You can hide this from your profile later.</p>
+		<div class="block">
+			<p>Email</p>
+			<input id="email" type="email" name="email" style="width: 300px; height: 30px;">
+			<div id="invalidMail" class=""></div>
+		</div>
+		<button id="mailbtn" class="border">Next</button>
+	</div>
+	<div><hr></div>
+		<p><a href="">Already have an account?</a></p>
+	<div class="container column height">
+			<p><a href="">language1</a></p>
+			<p><a href="">language2</a></p>
+			<p><a href="">language3</a></p>
+			<p><a href="">language4</a></p>
+			<p><a href="">language5</a></p>
+			<p><a href="">language6</a></p>
+			<p><a  href="">language7</a></p>
+			<p><a class="border" href="">+</a></p>
+	</div>
+	<footer class="center">Facebook Inc.</footer>
+	<script>
+		var button = document.getElementById('mailbtn');
+		function check() {
+			console.log('check');
+			if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(document.getElementById('email').value))
+		  	{
+		   		window.location.href= '/home/raj/Documents/html/facebook clone/birthdate.html'
+		  	}
+		    else {
+		    	clearBox('invalidMail');
+		    	error(event,300);
+		    }
+		}
+		function error(event,width) {
+			console.log('error');
+			let warningPopup = document.getElementById('invalidMail');
+			let text = document.createTextNode('Invalid email address')
+			warningPopup.appendChild(text);
+			warningPopup.classList.add("warningPopup");
+			warningPopup.style.width = width+"px";
+		}
+
+		function clearBox(elementID) { 
+			console.log('clearBox');
+			var div = document.getElementById(elementID); 
+		      
+		    while(div.firstChild) { 
+		        div.removeChild(div.firstChild); 
+		    } 
+		}
+
+		button.addEventListener('click', function () {
+			console.log('EventListener');
+			check();	
+		});
+	</script>
+</body>
+</html>
